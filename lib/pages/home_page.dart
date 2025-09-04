@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:tms/pages/profile_page.dart';
 import 'package:tms/themes/constant.dart';
+import 'package:tms/widgets/go_premium.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<MyHomePage> createState() => _MyHomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _MyHomePageState extends State<MyHomePage> {
+  final List<Widget> _pages = [HomePage(), ProfilePage()];
+  int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +24,11 @@ class _HomePageState extends State<HomePage> {
             topRight: Radius.circular(20),
           ),
           boxShadow: [
-            BoxShadow(color: kLightGrey, spreadRadius: 2, blurRadius: 10),
+            BoxShadow(
+              color: kLightGrey.withOpacity(0.5),
+              spreadRadius: 2,
+              blurRadius: 10,
+            ),
           ],
         ),
         child: ClipRRect(
@@ -41,21 +49,25 @@ class _HomePageState extends State<HomePage> {
                 label: 'Home',
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.search, size: 30),
-                label: 'Search',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.notifications, size: 30),
-                label: 'Notifications',
-              ),
-              BottomNavigationBarItem(
                 icon: Icon(Icons.person, size: 30),
-                label: 'Profile',
+                label: 'Person',
               ),
             ],
+            onTap: (index) {
+              setState(() {
+                selectedIndex = index;
+              });
+            },
           ),
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        backgroundColor: kDark,
+        child: Icon(Icons.add, size: 30, color: kWhite),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      body: _pages[selectedIndex],
     );
   }
 }
@@ -78,14 +90,7 @@ AppBar _buildAppBar() {
           ),
         ),
         SizedBox(width: 10),
-        Text(
-          'Hello, Ram',
-          style: TextStyle(
-            color: kDark,
-            fontSize: 18,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
+        Text('Hello, Ram', style: TextStyle(color: kDark, fontSize: 18)),
       ],
     ),
     actions: [
@@ -99,4 +104,21 @@ AppBar _buildAppBar() {
     backgroundColor: kWhite,
     elevation: 0,
   );
+}
+
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: EdgeInsetsGeometry.only(left: 8, right: 8, top: 10),
+          child: GoPremiumCard(),
+        ),
+      ],
+    );
+  }
 }

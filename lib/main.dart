@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Task Management App',
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: HomePage(),
+      home: MyHomePage(),
     );
   }
 }
