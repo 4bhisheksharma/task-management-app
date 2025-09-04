@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tms/models/task_model.dart';
 import 'package:tms/pages/profile_page.dart';
 import 'package:tms/themes/constant.dart';
 import 'package:tms/widgets/go_premium.dart';
@@ -63,7 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        backgroundColor: kDark,
+        backgroundColor: kBlueDark,
         child: Icon(Icons.add, size: 30, color: kWhite),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
@@ -115,9 +116,26 @@ class HomePage extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: EdgeInsetsGeometry.only(left: 8, right: 8, top: 10),
+          padding: EdgeInsetsGeometry.only(
+            left: 8,
+            right: 8,
+            top: 10,
+            bottom: 10,
+          ),
           child: GoPremiumCard(),
         ),
+        Container(
+          padding: EdgeInsets.all(15),
+          child: Text(
+            "Tasks",
+            style: TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.w500,
+              color: kDark,
+            ),
+          ),
+        ),
+        Expanded(child: Task()),
       ],
     );
   }
