@@ -5,7 +5,7 @@ const Color kYellowDart = Color.fromARGB(255, 235, 182, 117);
 const Color kYellow = Color.fromARGB(255, 246, 231, 199);
 
 const Color kBlueLight = Color(0xFFEDF4FE);
-const Color kBlueDark = Color.fromARGB(255, 184, 205, 246);
+const Color kBlueDark = Color.fromARGB(255, 100, 152, 255);
 const Color kBlue = Color.fromARGB(255, 182, 196, 212);
 
 const Color kRed = Color(0xFFFBE4E6);
@@ -13,8 +13,8 @@ const Color kRedDark = Color(0xFFF8BDC0);
 const Color kRedLight = Color(0xFFFCF0F0);
 
 const Color kWhite = Colors.white;
-Color kDark = Colors.grey.shade900;
-Color kLightGrey = Colors.grey.shade200;
+Color kDark = Colors.grey.shade800;
+Color kLightGrey = Colors.grey.shade700;
 
 class MyTheme {
   static const Color backgroundColor = Colors.white;
