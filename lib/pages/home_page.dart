@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:tms/models/task_model.dart';
 import 'package:tms/pages/profile_page.dart';
 import 'package:tms/themes/constant.dart';
 import 'package:tms/widgets/go_premium.dart';
+import 'package:tms/widgets/tasks.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -135,7 +135,7 @@ class HomePage extends StatelessWidget {
             ),
           ),
         ),
-        Expanded(child: Task()),
+        Expanded(child: TasksWidgets()),
       ],
     );
   }

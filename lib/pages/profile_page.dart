@@ -11,6 +11,6 @@ class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
-    return const Scaffold();
+    return Scaffold(body: const Center(child: Text('Profile Page')));
   }
 }
