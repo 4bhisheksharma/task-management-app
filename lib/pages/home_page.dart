@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:tms/pages/menu_page.dart';
 import 'package:tms/pages/profile_page.dart';
 import 'package:tms/themes/constant.dart';
+import 'package:tms/widgets/drawer.dart';
 import 'package:tms/widgets/go_premium.dart';
 import 'package:tms/widgets/tasks.dart';
 
@@ -17,7 +19,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: _buildAppBar(),
+      appBar: _buildAppBar(context),
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.only(
@@ -69,11 +71,12 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: _pages[selectedIndex],
+      drawer: MyDrawer(),
     );
   }
 }
 
-AppBar _buildAppBar() {
+AppBar _buildAppBar(BuildContext context) {
   return AppBar(
     title: Row(
       children: [
@@ -94,13 +97,6 @@ AppBar _buildAppBar() {
         Text('Hello, Ram', style: TextStyle(color: kDark, fontSize: 18)),
       ],
     ),
-    actions: [
-      IconButton(
-        onPressed: () {},
-        icon: Icon(Icons.more_vert, color: kDark, size: 30),
-      ),
-      SizedBox(width: 10),
-    ],
     centerTitle: true,
     backgroundColor: kWhite,
     elevation: 0,
