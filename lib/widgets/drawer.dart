@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tms/pages/contact_us_page.dart';
 import 'package:tms/pages/help_page.dart';
+import 'package:tms/pages/home_page.dart';
 import 'package:tms/pages/profile_page.dart';
 import 'package:tms/pages/setting_page.dart';
 
@@ -36,10 +37,21 @@ class _MyDrawerState extends State<MyDrawer> {
             ),
           ),
           ListTile(
+            leading: Icon(Icons.home),
+            title: Text('Home'),
+            onTap: () {
+              // Navigate to home page
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => HomePage()),
+              );
+            },
+          ),
+
+          ListTile(
             leading: Icon(Icons.person),
             title: Text('Profile'),
             onTap: () {
-              Navigator.pop(context);
               // Navigate to profile page
               Navigator.push(
                 context,
@@ -52,8 +64,6 @@ class _MyDrawerState extends State<MyDrawer> {
             leading: Icon(Icons.contact_page),
             title: Text('Contact Us'),
             onTap: () {
-              Navigator.pop(context);
-
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => ContactUsPage()),
