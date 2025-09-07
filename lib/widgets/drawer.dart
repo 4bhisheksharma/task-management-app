@@ -43,7 +43,7 @@ class _MyDrawerState extends State<MyDrawer> {
               // Navigate to home page
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => HomePage()),
+                MaterialPageRoute(builder: (context) => MyHomePage()),
               );
             },
           ),
