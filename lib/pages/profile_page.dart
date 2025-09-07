@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tms/widgets/drawer.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -10,7 +11,12 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
-    var height = MediaQuery.of(context).size.height;
-    return Scaffold(body: const Center(child: Text('Profile Page')));
+    return Scaffold(
+      body: const Center(child: Text('Profile Page')),
+      appBar: AppBar(
+        title: const Text('Profile', style: TextStyle(color: Colors.black)),
+      ),
+      drawer: MyDrawer(),
+    );
   }
 }

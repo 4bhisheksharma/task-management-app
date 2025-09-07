@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tms/pages/menu_page.dart';
 import 'package:tms/pages/profile_page.dart';
 import 'package:tms/themes/constant.dart';
 import 'package:tms/widgets/drawer.dart';
@@ -81,7 +80,7 @@ AppBar _buildAppBar(BuildContext context) {
     title: Row(
       children: [
         Container(
-          margin: EdgeInsets.only(left: 10, top: 5),
+          margin: EdgeInsets.only(top: 5),
           height: 45,
           width: 45,
           decoration: BoxDecoration(
